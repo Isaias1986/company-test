@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: ${SPRING_APP_NAME:company-test}
+  profiles:
+    active:
+      -  default
+  datasource:
+    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:developer}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:admin12345}
+  jpa:
+    show-sql: ${JPA_SHOW_SQL:true}
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibenate:
+        format_sql: ${HIBERNATE_FORMAT_SQL:true}
+server:
+  error:
+    include-message: always
+
+logging:
+  pattern:
+    console: ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}
