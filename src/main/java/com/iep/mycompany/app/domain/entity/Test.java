@@ -2,15 +2,12 @@ package com.iep.mycompany.app.domain.entity;
 
 import com.iep.commons.domain.entity.BaseEntity;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
-@Table(name = "test")
 @Entity
-@Builder
+@Table(name = "test")
 public class Test extends BaseEntity {
 
     @Id
@@ -21,4 +18,12 @@ public class Test extends BaseEntity {
     @Column(name = "name", length = 100)
     private String name;
 
+    public Test() {
+    }
+
+    @Builder
+    public Test(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

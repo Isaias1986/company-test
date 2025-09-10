@@ -1,12 +1,12 @@
 package com.iep.mycompany.app.model.response;
 
+import com.iep.commons.model.BaseResponseDTO;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 @Builder
-public class ResponseTest {
+public class ResponseTest extends BaseResponseDTO {
 
     private Long id;
     private String name;
