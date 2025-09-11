@@ -5,7 +5,8 @@ import org.springframework.http.HttpStatus;
 
 public enum EnumBadRequest implements SubBaseErrorCode {
 
-    RECORD_NOT_FOUND("registro no encontrado",HttpStatus.NOT_FOUND);
+    RECORD_NOT_FOUND("registro no encontrado",HttpStatus.NOT_FOUND),
+    METHOD_NOT_AVAILABLE("método no disponible",HttpStatus.FORBIDDEN);
 
 
     private final String message;
