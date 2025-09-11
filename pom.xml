@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<start-class>com.iep.mycompany.app.CompanyTestApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -75,6 +76,7 @@
 
 	<build>
 		<plugins>
+			<!-- Utilizar este fragmento de codigo solo para cuando se esten haciendo pruebas locales y cambios en el codigo -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -106,6 +108,14 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<!-- Utilizar este fragmento de codigo solo para cuando se genere el jar
+			 (mvn clean compile install) que servira como imagen de docker -->
+			<!--plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin-->
+
 		</plugins>
 	</build>
 
